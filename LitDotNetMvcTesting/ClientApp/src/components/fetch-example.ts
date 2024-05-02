@@ -1,9 +1,10 @@
-import {LitElement, css, html} from 'lit'
+import {css, html} from 'lit'
 import {customElement, property} from 'lit/decorators.js'
-import {TestDataModel} from "./models/TestDataModel.ts";
+import {TestDataModel} from "../models/TestDataModel.ts";
+import {BaseComponent} from "./base-component.ts";
 
 @customElement('fetch-example')
-export class FetchExample extends LitElement {
+export class FetchExample extends BaseComponent {
 
     @property()
     data: Array<TestDataModel> = [];
@@ -26,10 +27,10 @@ export class FetchExample extends LitElement {
         return html`
             <div>
                 <h1>Fetch Example</h1>
-                <button @click=${() => this.getData()}>Refresh</button>
+                <button class="p-4 color-" @click=${() => this.getData()}>Refresh</button>
                 ${this.data.length === 0 ? html`<p>Loading...</p>` : html``}
 
-                <ul>
+                <ul class="custom-color">
                     ${this.data.map(item => html`
                         <li>${item.summary} - ${item.temperatureF}F - ${new Date(item.date).toISOString()}</li>`)}
                 </ul>
@@ -37,11 +38,14 @@ export class FetchExample extends LitElement {
         `
     }
 
-    static styles = css`
-        button {
-            padding: 1rem;
-        }
-    `;
+    static styles = [
+        BaseComponent.globalStyles,
+        css`
+            .custom-color {
+                color: #0b5ed7;
+            }
+        `
+    ]
 }
 
 declare global {
