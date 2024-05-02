@@ -7,10 +7,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="wwwroot\" />
-    </ItemGroup>
-
-    <ItemGroup>
       <PackageReference Include="Vite.AspNetCore" Version="2.0.0" />
     </ItemGroup>
 
