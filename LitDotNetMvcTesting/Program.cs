@@ -1,3 +1,4 @@
+using LitDotNetMvcTesting.Models;
 using Vite.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -32,5 +33,13 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+// Create api endpoint
+app.MapGet("/api/MyApi", () => Enumerable.Range(1, 5).Select(index => new TestDataModel
+{
+    Date = DateTime.Now,
+    TemperatureC = index,
+    Summary = "Summary " + index
+}));
 
 app.Run();

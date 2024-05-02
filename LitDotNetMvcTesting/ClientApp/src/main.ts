@@ -1,3 +1,2 @@
-import { MyElement } from "./my-element.ts";
-
-export { MyElement };
+export { MyElement } from "./my-element.ts";
+export { FetchExample } from "./fetch-example.ts";

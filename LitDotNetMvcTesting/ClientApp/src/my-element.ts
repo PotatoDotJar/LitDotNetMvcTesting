@@ -2,7 +2,7 @@ import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import litLogo from './assets/lit.svg'
 import viteLogo from './assets/vite.svg'
-import gifimg from "./assets/OledGif2.gif";
+import gifImg from "./assets/OledGif2.gif";
 
 /**
  * An example element.
@@ -28,7 +28,7 @@ export class MyElement extends LitElement {
     let test = [];
     
     for (let i = 0; i < this.count; i++) {
-      test.push(html`<img src="${gifimg}" />`);
+      test.push(html`<img src="${gifImg}" />`);
     }
     
     return test;
