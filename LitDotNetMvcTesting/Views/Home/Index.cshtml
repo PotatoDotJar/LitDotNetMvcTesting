@@ -7,21 +7,30 @@
     <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
 
-<div class="flex flex-col items-center">
+<div id="index-container" class="grid grid-cols-2 grid-rows-2 gap-4">
     <my-element>
-        <h1>Vite + Lit</h1>
+        <h1 class="text-xl">My Element 1</h1>
     </my-element>
-    
+
+    <my-element>
+        <h1 class="text-xl">My Element 2</h1>
+    </my-element>
+
+    <fetch-example></fetch-example>
+
     <fetch-example></fetch-example>
 </div>
 
 @section Scripts
 {
-    <environment include="Development">
-        <script type="module" src="http://localhost:5173/@@vite/client"></script>
-        <script type="module" src="~/src/main.ts"></script>
-    </environment>
-    <environment exclude="Development">
-        <script type="module" asp-src-include="~/client-components/my-lib.js"></script>
-    </environment>
+    <script defer>
+        const indexContainer = document.getElementById('index-container');
+        
+        // Listen for custom event from my-element
+        indexContainer.addEventListener('count-changed', (e) => {
+            console.log('count-changed event received', e.detail);
+        });
+        
+        
+    </script>
 }

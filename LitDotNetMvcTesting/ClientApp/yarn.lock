@@ -122,12 +122,26 @@
   resolved "https://registry.yarnpkg.com/@lit-labs/ssr-dom-shim/-/ssr-dom-shim-1.2.0.tgz#353ce4a76c83fadec272ea5674ede767650762fd"
   integrity sha512-yWJKmpGE6lUURKAaIltoPIE/wrbY3TEkqQt+X0m+7fQNnAv0keydnYvbiJFP1PnMhizmIWRWOG5KLhYyc/xl+g==
 
-"@lit/reactive-element@^2.0.4":
+"@lit/context@^1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@lit/context/-/context-1.1.1.tgz#4acbbd78d6ab6e2772dd40ff1a4dc8248ea7fb9a"
+  integrity sha512-q/Rw7oWSJidUP43f/RUPwqZ6f5VlY8HzinTWxL/gW1Hvm2S5q2hZvV+qM8WFcC+oLNNknc3JKsd5TwxLk1hbdg==
+  dependencies:
+    "@lit/reactive-element" "^1.6.2 || ^2.0.0"
+
+"@lit/reactive-element@^1.0.0 || ^2.0.0", "@lit/reactive-element@^1.6.2 || ^2.0.0", "@lit/reactive-element@^2.0.4":
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/@lit/reactive-element/-/reactive-element-2.0.4.tgz#8f2ed950a848016383894a26180ff06c56ae001b"
   integrity sha512-GFn91inaUa2oHLak8awSIigYz0cU0Payr1rcFsrkf5OJ5eSPxElyZfKh0f2p9FsTiZWXQdWGJeXZICEfXXYSXQ==
   dependencies:
     "@lit-labs/ssr-dom-shim" "^1.2.0"
+
+"@lit/task@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@lit/task/-/task-1.0.0.tgz#61ae9ac6131368bbcf5f09ccade8037e6bb8705e"
+  integrity sha512-7jocGBh3yGlo3kKxQggZph2txK4X5GYNWp2FAsmV9u2spzUypwrzRzXe8I72icAb02B00+k2nlvxVcrQB6vyrw==
+  dependencies:
+    "@lit/reactive-element" "^1.0.0 || ^2.0.0"
 
 "@rollup/rollup-android-arm-eabi@4.17.2":
   version "4.17.2"

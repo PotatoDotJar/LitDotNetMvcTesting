@@ -58,7 +58,14 @@ export class MyElement extends BaseComponent {
     }
 
     private _onClick() {
-        this.count++
+        this.count++;
+        
+        // Dispatch a custom event
+        this.dispatchEvent(new CustomEvent('count-changed', {
+            detail: { count: this.count },
+            bubbles: true,
+            composed: true
+        }));
     }
 
     static styles = [
